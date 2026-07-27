@@ -18,22 +18,26 @@ if (navToggle && siteNav) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Stat carousel ("chiffre suivant" style)
+// Stat carousel — auto-advances on its own
 const stats = [
   { figure: '6+', caption: 'Years running as a hands-on robotics program under SRS EduTech.' },
   { figure: '1,000+', caption: 'Students mentored across GNR Robotics programs.' },
   { figure: '50+', caption: 'Expert faculty and trained facilitators.' }
 ];
 let statIndex = 0;
+const statDisplay = document.querySelector('.stat-display');
 const statFigure = document.getElementById('stat-figure');
 const statCaption = document.getElementById('stat-caption');
-const statNext = document.getElementById('stat-next');
-if (statNext && statFigure && statCaption) {
-  statNext.addEventListener('click', () => {
+if (statDisplay && statFigure && statCaption) {
+  setInterval(() => {
     statIndex = (statIndex + 1) % stats.length;
-    statFigure.textContent = stats[statIndex].figure;
-    statCaption.textContent = stats[statIndex].caption;
-  });
+    statDisplay.classList.add('is-fading');
+    setTimeout(() => {
+      statFigure.textContent = stats[statIndex].figure;
+      statCaption.textContent = stats[statIndex].caption;
+      statDisplay.classList.remove('is-fading');
+    }, 300);
+  }, 4000);
 }
 
 // Contact form placeholder behavior

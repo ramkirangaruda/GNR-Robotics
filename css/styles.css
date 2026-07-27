@@ -151,21 +151,9 @@ p { margin: 0 0 1em; }
 .stat-display { margin: 1.5em 0 0.5em; }
 .stat-figure { font-size: clamp(4.5rem, 12vw, 8rem); font-weight: 800; line-height: 1; }
 .stat-caption { max-width: 46ch; margin: 0 auto; color: #C7CCE6; font-size: 1.05rem; }
-.stat-next {
-  margin-top: 1.5em;
-  width: 96px; height: 96px;
-  border-radius: 50%;
-  background: var(--cherry);
-  color: var(--white);
-  border: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-.stat-next:hover { background: var(--cherry-bright); transform: scale(1.05); }
+.stat-figure, .stat-caption { transition: opacity 0.3s ease; }
+.stat-display.is-fading .stat-figure,
+.stat-display.is-fading .stat-caption { opacity: 0; }
 
 /* Pillars (gradient dark section, paired rows) */
 .pillars { background: linear-gradient(160deg, var(--navy-black) 0%, var(--violet) 55%, var(--navy-black) 100%); }
@@ -191,8 +179,7 @@ p { margin: 0 0 1em; }
 .program-card { background: var(--white); border: 1px solid rgba(27,30,43,0.1); border-radius: 14px; padding: 28px; position: relative; }
 .program-tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--white); background: var(--navy); display: inline-block; padding: 4px 10px; border-radius: 999px; margin-bottom: 0.75em; }
 .program-card h3 { color: var(--navy); font-size: 1.3rem; }
-.program-meta { display: flex; justify-content: space-between; align-items: center; margin: 1.2em 0 0; padding-top: 1em; border-top: 1px dashed rgba(27,30,43,0.2); font-size: 0.85rem; color: var(--ink-soft); }
-.program-fee { font-weight: 700; color: var(--cherry); }
+.program-meta { margin: 1.2em 0 0; padding-top: 1em; border-top: 1px dashed rgba(27,30,43,0.2); font-size: 0.85rem; color: var(--ink-soft); }
 .program-card--placeholder { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; background: transparent; border: 2px dashed rgba(153,0,17,0.3); color: var(--ink-soft); border-radius: 14px; }
 
 /* Story */
