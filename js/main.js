@@ -39,13 +39,3 @@ if (statDisplay && statFigure && statCaption) {
     }, 300);
   }, 4000);
 }
-
-// Contact form placeholder behavior
-const form = document.getElementById('contact-form');
-const formNote = document.getElementById('form-note');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formNote.textContent = "Thanks — this demo form isn't connected yet. See the setup guide to wire it up (Formspree, Netlify Forms, or email).";
-  });
-}
